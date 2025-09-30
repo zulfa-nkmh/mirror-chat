@@ -1,3 +1,5 @@
+import { Battery, Wifi, SignalHigh } from "lucide-react";
+
 export default function Hero() {
   const PhoneMockup = () => {
     return (
@@ -38,12 +40,67 @@ export default function Hero() {
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-b-xl z-20"></div>
 
           {/* Konten Layar Ponsel */}
-          <div className="absolute inset-0 p-4 text-white z-10 bg-black">
-            {/* 9:41 Status Bar */}
-            <div className="flex justify-between items-center text-xs pt-1 mb-4 text-gray-200 font-semibold">
+          <div className="absolute inset-0 p-4 text-white z-10 bg-black flex flex-col">
+            {/* Status Bar */}
+            <div className="flex justify-between items-center text-xs pt-1 mb-2 text-gray-200 font-semibold">
               <span>9:41</span>
-              <div className="flex items-center space-x-1">
-                <span>📶</span> <span className="text-sm font-light">🔋</span>
+              <div className="flex items-center space-x-2">
+                <SignalHigh size={14} />
+                <Wifi size={14} />
+                <Battery size={14} className="animate-pulse text-green-400" /> {/* <- di sini */}
+              </div>
+            </div>
+
+            {/* Header Aplikasi */}
+            <div className="flex justify-between items-center mb-6 text-lg">
+              <span className="text-gray-400 font-light">{'<'}</span>
+              <span className="font-semibold text-white">Maestro AI</span>
+              <span className="text-gray-400 font-light">ⓘ</span>
+            </div>
+
+            {/* Konten Utama */}
+            <div className="flex flex-col items-center">
+              {/* Logo Maestro Glow */}
+              <div className="flex justify-center items-center h-36">
+                <div className="relative w-28 h-28 flex justify-center items-center">
+                  <div className="absolute w-24 h-24 bg-purple-500 rounded-full blur-2xl opacity-40"></div>
+                  <div className="relative w-20 h-20 bg-purple-600 rounded-2xl flex justify-center items-center transform rotate-45">
+                    <div className="w-10 h-10 bg-white rounded-full blur-sm opacity-20 absolute -z-10"></div>
+                    <div className="w-16 h-16 bg-purple-400 rounded-full transform -rotate-45"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pesan */}
+              <div className="text-center mb-6 mt-4">
+                <p className="text-2xl font-bold">Hello I'm Maestro</p>
+                <p className="text-sm text-gray-400">Your AI digital Partners</p>
+              </div>
+
+              {/* Kartu Konten Interaktif */}
+              <div className="space-y-4 w-full">
+                <div className="relative bg-gray-900 p-4 rounded-xl border border-gray-700/50">
+                  <p className="font-semibold text-base mb-1">How to Create Application</p>
+                  <p className="text-xs text-gray-400">
+                    Your application to Mangcoding has been sent successfully.
+                  </p>
+                  <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
+                    ↗
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="relative bg-gray-900 p-4 rounded-xl border border-gray-700/50">
+                    <p className="font-semibold text-base mb-1">Create Prompt For Generate AI</p>
+                    <p className="text-xs text-gray-400">Your application to Mangcoding has been sent.</p>
+                    <span className="absolute right-4 top-4 text-gray-400 text-sm">↗</span>
+                  </div>
+                  <div className="relative bg-gray-900 p-4 rounded-xl border border-gray-700/50">
+                    <p className="font-semibold text-base mb-1">Create Video for Motion</p>
+                    <p className="text-xs text-gray-400">Your application to Mangcoding has been sent.</p>
+                    <span className="absolute right-4 top-4 text-gray-400 text-sm">↗</span>
+                  </div>
+                </div>
               </div>
             </div>
 
