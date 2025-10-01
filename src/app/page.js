@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import SimpleFooter from "@/components/footer";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Navbar />
       <div>
         <Hero />
+        <SimpleFooter />
       </div>
     </main>
   );

@@ -76,6 +76,13 @@
   --sidebar-ring: oklch(0.705 0.015 286.067);
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
+  --neon-color: #d281ef; /* Hijau / Cyan Neon */
+  --neon-glow: 0 0 5px var(--neon-color), 0 0 15px var(--neon-color), 0 0 30px var(--neon-color);
+  --neon-purple: #a93ac2; /* Pink dasar */
+  --neon-purple-strong: #bb20be; /* Pink gelap untuk intensitas */
+  --neon-glow-purple: 0 0 5px var(--neon-purple), 0 0 15px var(--neon-purple), 0 0 30px var(--neon-purple-strong), 0 0 50px var(--neon-purple-strong);
+  --neon-color-footer: #00ffcc; /* Cyan */
+
 }
 
 .dark {
@@ -118,5 +125,204 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.neon-glow-effect {
+    box-shadow: var(--neon-glow-pink);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Class untuk efek pulsasi (flicker lembut) yang meniru cahaya neon.
+  Gunakan class ini: className="animate-neon-pulse"
+*/
+@keyframes soft-pulse-global {
+    0%, 100% {
+        box-shadow: var(--neon-glow-pink);
+        opacity: 0.9;
+    }
+    50% {
+        box-shadow: 0 0 2px var(--neon-pink), 0 0 10px var(--neon-pink);
+        opacity: 1;
+    }
+}
+
+.animate-neon-pulse {
+    animation: soft-pulse-global 4s infinite alternate;
+}
+
+/* Pastikan animasi spin-slow yang sudah Anda gunakan tetap ada 
+  Jika Anda belum mendefinisikannya di Tailwind.config, Anda bisa menambahkannya di sini:
+*/
+@keyframes spin-slow-global {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow-global {
+    animation: spin-slow-global 8s linear infinite; /* 8s adalah kecepatan putaran yang lambat */
+}
+
+/* card membership */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Agar responsif di layar kecil */
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 20px;
+}
+
+.card {
+  /* Style dasar untuk Card */
+  background-color: rgba(0, 0, 0, 0.7); /* Background gelap transparan */
+  border-radius: 15px;
+  padding: 35px 30px;
+  width: 100%;
+  max-width: 400px;
+  color: #f0f0f0;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Khusus Premium */
+.premium-card {
+  border: 3px solid #ae37dd; /* Neon Pink/Magenta */
+  box-shadow: 0 0 10px #e40fe4, 0 0 25px #e731e7;
+}
+
+.premium-card:hover {
+  box-shadow: 0 0 15px #ff00ff, 0 0 40px #ff00ff;
+}
+
+/* Card Khusus Free (menggunakan warna neon default) */
+.free-card {
+  border: 3px solid var(--neon-color); /* Neon Cyan */
+  box-shadow: var(--neon-glow);
+}
+
+.free-card:hover {
+  box-shadow: var(--neon-glow), 0 0 40px var(--neon-color);
+}
+
+.card-title {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-shadow: 0 0 5px var(--neon-color);
+}
+
+.premium-card .card-title {
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff;
+}
+
+.card-price {
+  font-size: 3em;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.per-month {
+  font-size: 0.4em;
+  font-weight: normal;
+  opacity: 0.7;
+  margin-left: 5px;
+}
+
+.card-description {
+  margin-bottom: 25px;
+  color: #ccc;
+  font-style: italic;
+}
+
+/* Daftar Benefit */
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.benefit-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.premium-benefit-item::before {
+  content: "⚡"; /* Ikon premium */
+  margin-right: 10px;
+  color: #ff00ff;
+}
+
+.free-benefit-item::before {
+  content: "✔️"; /* Ikon ceklist */
+  margin-right: 10px;
+  color: var(--neon-color);
+}
+
+/* Tombol */
+.card-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.free-button {
+  background-color: var(--neon-color);
+  color: #111;
+}
+
+.free-button:hover {
+  background-color: #00e6b8;
+  box-shadow: 0 0 15px var(--neon-color);
+}
+
+.premium-button {
+  background-color: #ff00ff;
+  color: #111;
+  box-shadow: 0 0 8px #ff00ff;
+}
+
+.premium-button:hover {
+  background-color: #e600e6;
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+/* Tag BEST VALUE */
+.tag-best-value {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff00ff;
+  color: #111;
+  padding: 5px 15px;
+  font-weight: bold;
+  font-size: 0.8em;
+  border-radius: 0 15px 0 15px;
+  transform: rotate(3deg);
+}
+
+/* Responsif sederhana */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
   }
 }

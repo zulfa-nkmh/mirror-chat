@@ -12,8 +12,8 @@ export default function Hero() {
             Artificial Intelligence
           </span>
           {/* Judul Utama */}
-        <h1 className="text-7xl font-extrabold mt-8 leading-tight">
-          Empower Conversations <br /> with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Smarter AI</span>
+        <h1 className="text-6xl font-extrabold mt-8 leading-tight">
+          Empower Conversations <br /> with <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Arunika MC</span>
         </h1>
           <p className="text-gray-400 mt-6 text-lg">
             ARUNIKA MC (MirrorChat) is your AI twin that helps you reflect, grow, and face your truth
@@ -22,13 +22,13 @@ export default function Hero() {
 
           <div className="flex gap-6 mt-8">
             <a
-              href="/chat"
+              href="/login"
               className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-xl text-lg font-semibold transition"
             >
               Start Now
             </a>
             <a
-              href="#download"
+              href="/download"
               className="px-6 py-3 border border-gray-600 rounded-xl text-lg font-semibold hover:border-purple-600 transition"
             >
               Download App
@@ -61,25 +61,31 @@ export default function Hero() {
             </div>
 
             {/* Konten Utama */}
-            <div className="flex flex-col items-center">
-              {/* Logo Maestro Glow */}
-              <div className="flex justify-center items-center h-36">
+<div className="flex flex-col items-center">
+    {/* Logo Icon Glow */}
+    <div className="flex justify-center items-center h-36">
         <div className="relative w-28 h-28 bg-transparent flex justify-center items-center">
           
-          {/* Efek Glow Ungu (Blur) - Gunakan animasi soft-pulse */}
-          <div className="absolute w-24 h-24 bg-purple-500 rounded-full blur-2xl opacity-40 animate-soft-pulse"></div>
-          
-          {/* Ikon Maestro - Gunakan animasi spin-slow */}
-          <div className="relative w-20 h-20 bg-purple-600 rounded-2xl flex justify-center items-center transform rotate-45 perspective-[1000px] animate-spin-slow">
+            {/* Efek Glow Ungu (Blur) - Gunakan animasi soft-pulse */}
+            {/* Hapus animate-soft-pulse Tailwind, ganti dengan glow dan pulse global */}
+            <div className="absolute w-24 h-24 bg-pink-300 rounded-full blur-2xl opacity-40 
+              neon-glow-effect animate-neon-pulse"></div> 
             
-            {/* Efek cahaya internal di dalam ikon */}
-            <div className="w-10 h-10 bg-white rounded-full blur-sm opacity-20 absolute -z-10"></div>
-            
-            {/* Elemen Ikon Utama */}
-            <div className="w-16 h-16 bg-purple-400 rounded-full transform -rotate-45"></div>
-          </div>
+            {/* Ikon Maestro - Gunakan animasi spin-slow */}
+            {/* Hapus animate-spin-slow Tailwind, ganti dengan glow dan spin global */}
+            <div className="relative w-20 h-20 bg-purple-600 rounded-2xl flex justify-center items-center 
+              transform rotate-45 perspective-[1000px] 
+              neon-glow-effect animate-spin-slow-global">
+              
+                {/* Efek cahaya internal di dalam ikon */}
+                <div className="w-10 h-10 bg-pink-300 rounded-full blur-sm opacity-20 absolute -z-10"></div>
+                
+                {/* Elemen Ikon Utama */}
+                <div className="w-16 h-16 bg-purple-400 rounded-full transform -rotate-45"></div>
+            </div>
+
         </div>
-      </div>
+    </div>
 
 
               {/* Pesan */}
