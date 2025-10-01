@@ -7,11 +7,11 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm px-8 py-4 flex items-center justify-between">
       <h2 className="text-xl font-bold text-white">ARUNIKA MC</h2>
       <div className="hidden md:flex gap-8 text-gray-300">
-        <Link href="#about">About</Link>
+        <Link href="/about">About</Link>
         <Link href="#how">How it Works</Link>
         <Link href="#pricing">Pricing</Link>
         <Link href="#contact">Contact Us</Link>
-        <Link href="#download">Download</Link>
+        <Link href="/download">Download</Link>
       </div>
    
       <div className="flex items-center gap-4">
