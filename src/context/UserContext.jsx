@@ -1,49 +1,37 @@
-// src/context/UserContext.js
-
 "use client";
+import { createContext, useContext, useState, useEffect } from "react";
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
-
-// 1. Buat Context
 const UserContext = createContext();
 
-// 2. Buat Provider Component
 export const UserProvider = ({ children }) => {
-    // Ambil ID dari Local Storage saat inisialisasi
-    const [userId, setUserId] = useState(null);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    // Efek untuk memuat state dari Local Storage saat pertama kali dimuat
-    useEffect(() => {
-        const storedId = localStorage.getItem('app_user_id');
-        if (storedId) {
-            setUserId(storedId);
-            setIsLoggedIn(true);
-        }
-    }, []);
+  useEffect(() => {
+    const storedUser = localStorage.getItem("mirrorUser");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+      setIsLoggedIn(true);
+    }
+  }, []);
 
-    // Fungsi untuk mensimulasikan login
-    const login = (id) => {
-        if (id) {
-            localStorage.setItem('app_user_id', id);
-            setUserId(id);
-            setIsLoggedIn(true);
-        }
-    };
+  const login = (userData) => {
+    setUser(userData);
+    setIsLoggedIn(true);
+    localStorage.setItem("mirrorUser", JSON.stringify(userData));
+  };
 
-    // Fungsi untuk logout
-    const logout = () => {
-        localStorage.removeItem('app_user_id');
-        setUserId(null);
-        setIsLoggedIn(false);
-    };
+  const logout = () => {
+    setUser(null);
+    setIsLoggedIn(false);
+    localStorage.removeItem("mirrorUser");
+  };
 
-    return (
-        <UserContext.Provider value={{ userId, isLoggedIn, login, logout }}>
-            {children}
-        </UserContext.Provider>
-    );
+  return (
+    <UserContext.Provider value={{ user, userId: user?.id, isLoggedIn, login, logout }}>
+      {children}
+    </UserContext.Provider>
+  );
 };
 
-// 3. Buat Custom Hook untuk menggunakan Context
 export const useUser = () => useContext(UserContext);

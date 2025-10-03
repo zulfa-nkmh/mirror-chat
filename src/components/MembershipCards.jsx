@@ -5,18 +5,15 @@ import React from 'react';
 const MembershipCards = () => {
   const freeBenefits = [
     'Akses Chatbox Dasar',
-    '30 Pesan/Hari',
+    '10 Pesan/Hari',
     'Dukungan Komunitas',
-    'Balasan Standar (hingga 3 detik)',
   ];
 
   const premiumBenefits = [
     'Akses Chatbox Penuh',
     'Pesan Tanpa Batas (Unlimited)',
     'Prioritas Dukungan 24/7',
-    'Balasan Instan (di bawah 1 detik)',
     'Fitur Ekspor Transkrip Chat',
-    'Template Jawaban Khusus',
   ];
 
   const renderBenefits = (benefits, isPremium = false) => (
