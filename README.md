@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**ARUNIKA MC (Mirror Chat)**
 
-## Getting Started
+ARUNIKA MC (MirrorChat) adalah aplikasi web chat AI Twin berbasis Next.js dengan antarmuka modern, responsif, dan interaktif. Aplikasi ini menampilkan percakapan dengan AI sekaligus menyediakan fitur membership.
 
-First, run the development server:
+Dirancang sebagai cermin bagi perjalanan karier dan pengembangan diri, ARUNIKA MC membantu pengguna merefleksi pengalaman, mengembangkan kemampuan, dan menghadapi tantangan pribadi melalui percakapan digital.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Pengguna dapat membagikan pemikiran, tantangan, atau tujuan, serta menerima panduan, refleksi, dan saran mentor yang dipersonalisasi. Setiap interaksi mendorong penguasaan keterampilan, penyelesaian hambatan, dan pengelolaan perjalanan karier secara lebih efektif.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+AI Twin ini hadir untuk mendengarkan, merefleksikan, dan membimbing dengan dukungan konsisten dan objektif.
+_______________
+**USER FLOW:**
+1. User harus sudah melakukan skillmatch terlebih dahulu agar data dapat hasil analisis Skillmatch dapat di sinkronisasikan dengan personalisasi MirrorChat.
+2. User Sign-in menggunakan account yang sama saat skillmatch.
+3. User langsung di arahkan pada ChatPage/ChatBox yang telah memiliki sinkronisasi data userId.
+4. User bisa langsung melakukan chat interaktif dengan AI Twin dan memanfaatkan fitur-fitur yang ada di ChatPage/ChatBox (Account,Search,Library dan History)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+___Contoh Pemakaian___
+Sign-in dengan account berikut :
+__________
+"email": "anakusuma@gmail.com",
+"password": "123456",
+__________
+"email": "yasmin@gmail.com",
+"password": "123458"
+__________
+"email": "citradewi@gmail.com",
+"password": "123459",
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+________________
 
-## Learn More
+**FITUR UTAMA**
 
-To learn more about Next.js, take a look at the following resources:
+Next.js – Framework React untuk rendering server-side dan routing otomatis.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Tailwind CSS – Styling utility-first untuk desain yang cepat dan responsif.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ShadCN UI / Radix UI – Komponen UI siap pakai: Card, Button, Input, Modal, dll.
 
-## Deploy on Vercel
+Lucide React Icons – Ikon modern untuk UI interaktif.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Responsive Layout – Mobile-first, grid/flex untuk penyesuaian ukuran layar.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Chat Interaktif – Menampilkan history chat, indikator mengetik, dan avatar user/bot.
+
+_______________________
+**INSTALASI**
+
+1. Instal dependensi:
+
+npm install 
+
+2. Jalankan server pengembangan:
+
+npm run dev 
+Buka http://localhost:3000 
+untuk melihat aplikasi.
+
+_________________
+**👩‍💻 Author : Zulfatun Nikmah GitHub: @zulfa-nkmh**
+
+**📜 Lisensi**
+
+**MIT License – bebas digunakan & dimodifikasi dengan menyertakan atribusi.
+MIT License**
+
+Copyright (c) 2025 Zulfa-nkmh
+
+MIT License
+
+Copyright (c) 2025 Zulfa NKMH
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
