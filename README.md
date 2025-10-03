@@ -9,7 +9,7 @@ Pengguna dapat membagikan pemikiran, tantangan, atau tujuan, serta menerima pand
 AI Twin ini hadir untuk mendengarkan, merefleksikan, dan membimbing dengan dukungan konsisten dan objektif.
 _______________
 **USER FLOW:**
-1. User harus sudah melakukan skillmatch terlebih dahulu agar data dapat hasil analisis Skillmatch dapat di sinkronisasikan dengan personalisasi MirrorChat.
+1. User harus sudah melakukan skillmatch terlebih dahulu agar data hasil analisis Skillmatch dapat di sinkronisasikan dengan personalisasi MirrorChat.
 2. User Sign-in menggunakan account yang sama saat skillmatch.
 3. User langsung di arahkan pada ChatPage/ChatBox yang telah memiliki sinkronisasi data userId.
 4. User bisa langsung melakukan chat interaktif dengan AI Twin dan memanfaatkan fitur-fitur yang ada di ChatPage/ChatBox (Account,Search,Library dan History)
