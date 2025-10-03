@@ -5,12 +5,17 @@ import SimpleFooter from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gradient-to-br from-purple-900 via-black to-black text-center px-6">
+    <main className="flex flex-col min-h-screen bg-gradient-to-br from-purple-900 via-black to-black text-center px-4 sm:px-6">
+      {/* Navbar fixed */}
       <Navbar />
-      <div>
+
+      {/* Konten utama */}
+      <div className="flex-1 flex flex-col items-center justify-center w-full">
         <Hero />
-        <SimpleFooter />
       </div>
+
+      {/* Footer */}
+      <SimpleFooter />
     </main>
   );
 }
