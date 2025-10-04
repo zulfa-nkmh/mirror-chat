@@ -5,6 +5,7 @@ import { useChatStore } from "@/store/chatStore";
 import { useUser } from '@/context/UserContext'; 
 import { useRouter } from 'next/navigation'; 
 import { Send, User, Bot, Trash2, Search, BookOpen, Clock, X } from "lucide-react"; 
+import { trackConfusion, mentorRecommendation, resetConfusion } from '@/lib/aiGuards';
 
 // --- Komponen Modal Pencarian ---
 const SearchModal = ({ onClose }) => {
@@ -193,33 +194,50 @@ export default function ChatLayout() {
 
   // Kirim pesan
   const handleSend = async (e) => {
-    e.preventDefault();
-    if (!input.trim()) return;
+  e.preventDefault();
+  if (!input.trim()) return;
 
-    addMessage({ role: "user", content: input });
-    const currentInput = input;
-    setInput("");
-    setIsLoading(true);
+  addMessage({ role: "user", content: input });
+  const currentInput = input;
+  setInput("");
+  setIsLoading(true);
 
-    try {
-      const res = await fetch("/api/gemini", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId, profile: user, message: currentInput }),
+  try {
+    // Step 1: cek kebingungan user
+    const confusionCount = trackConfusion(userId, currentInput);
+
+    // Step 2: selalu panggil Gemini dulu
+    const res = await fetch("/api/gemini", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId, profile: user, message: currentInput }),
+    });
+
+    const data = await res.json();
+    const geminiReply = data.reply || "⚠️ Bot tidak memberikan balasan.";
+
+    // Step 3: kalau belum stage 5 → jawab Gemini biasa
+    if (confusionCount < 5) {
+      addMessage({ role: "bot", content: geminiReply });
+    } else {
+      // Stage 5 → jawab singkat dari Gemini + rekomendasi mentor
+      addMessage({
+        role: "bot",
+        content: `${geminiReply}\n\n🤝 Sepertinya kamu butuh panduan lebih lanjut. Aku sarankan untuk konsultasi langsung dengan mentor.`,
       });
 
-      const data = await res.json();
-      if (data.reply) {
-        addMessage({ role: "bot", content: data.reply });
-      } else {
-        addMessage({ role: "bot", content: "⚠️ Bot tidak memberikan balasan." });
-      }
-    } catch (err) {
-      addMessage({ role: "bot", content: "⚠️ Error koneksi ke server." });
-    } finally {
-      setIsLoading(false);
+      const mentorMsg = await mentorRecommendation(userId);
+      addMessage({ role: "bot", content: mentorMsg });
+
+      // reset supaya siklus ulang lagi dari 0
+      resetConfusion(userId);
     }
-  };
+  } catch (err) {
+    addMessage({ role: "bot", content: "⚠️ Error koneksi ke server." });
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   // Komponen Bubble Chat
   const MessageBubble = ({ message }) => (
