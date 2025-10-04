@@ -14,7 +14,7 @@ _______________
 3. User langsung di arahkan pada ChatPage/ChatBox yang telah memiliki sinkronisasi data userId.
 4. User bisa langsung melakukan chat interaktif dengan AI Twin dan memanfaatkan fitur-fitur yang ada di ChatPage/ChatBox (Account,Search,Library dan History)
 
-___Contoh Pemakaian___
+___Contoh Simulasi___
 Sign-in dengan account berikut :
 __________
 "email": "anakusuma@gmail.com",
