@@ -12,7 +12,8 @@ _______________
 1. User harus sudah melakukan skillmatch terlebih dahulu agar data hasil analisis Skillmatch dapat di sinkronisasikan dengan personalisasi MirrorChat.
 2. User Sign-in menggunakan account yang sama saat skillmatch.
 3. User langsung di arahkan pada ChatPage/ChatBox yang telah memiliki sinkronisasi data userId.
-4. User bisa langsung melakukan chat interaktif dengan AI Twin dan memanfaatkan fitur-fitur yang ada di ChatPage/ChatBox (Account,Search,Library dan History)
+4. User bisa langsung melakukan chat interaktif dengan AI Twin dan memanfaatkan fitur-fitur yang ada di ChatPage/ChatBox (Chat Box,Account,Search,Library dan History)
+5. User akan mendapatkan rekomendasi mentor yang sudah di personalisasi (berdasarkan userId) saat mengalami kebingungan maksimal 5 kali ketika berinteraksi dengan AI Twin, dengan kriteria telah menunjukkan kata- kata "confusion" seperti "bingung", "stuck", "deadlock", "mentok",dan "buntu" dalam percakapan.
 
 ___Contoh Simulasi___
 Sign-in dengan account berikut :
