@@ -34,7 +34,11 @@ Next.js – Framework React untuk rendering server-side dan routing otomatis.
 
 Tailwind CSS – Styling utility-first untuk desain yang cepat dan responsif.
 
-ShadCN UI / Radix UI – Komponen UI siap pakai: Card, Button, Input, Modal, dll.
+Zustand - state management untuk mengatur percakapan, history chat, dan status bot.
+
+context - state management untuk mengelola login dan data user.
+
+ShadCN UI / Radix UI – Komponen UI.
 
 Lucide React Icons – Ikon modern untuk UI interaktif.
 
