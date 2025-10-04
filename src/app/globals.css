@@ -133,9 +133,7 @@
     transition: box-shadow 0.3s ease-in-out;
 }
 
-/* Class untuk efek pulsasi (flicker lembut) yang meniru cahaya neon.
-  Gunakan class ini: className="animate-neon-pulse"
-*/
+
 @keyframes soft-pulse-global {
     0%, 100% {
         box-shadow: var(--neon-glow-pink);
@@ -151,9 +149,7 @@
     animation: soft-pulse-global 4s infinite alternate;
 }
 
-/* Pastikan animasi spin-slow yang sudah Anda gunakan tetap ada 
-  Jika Anda belum mendefinisikannya di Tailwind.config, Anda bisa menambahkannya di sini:
-*/
+
 @keyframes spin-slow-global {
     from {
         transform: rotate(0deg);

@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 
 const TEXT_TO_TYPE = "This Page is Under Development";
-const TYPING_SPEED = 150; // Kecepatan mengetik (ms per karakter)
-const DELETING_SPEED = 50; // Kecepatan menghapus (ms per karakter)
-const PAUSE_BEFORE_DELETE = 1000; // Jeda sebelum mulai menghapus (ms)
-const PAUSE_BEFORE_TYPE = 500; // Jeda sebelum mulai mengetik lagi (ms)
+const TYPING_SPEED = 150; 
+const DELETING_SPEED = 50;
+const PAUSE_BEFORE_DELETE = 1000; 
+const PAUSE_BEFORE_TYPE = 500; 
 
 const TypewriterLoop = () => {
   const [displayText, setDisplayText] = useState('');
@@ -16,11 +16,11 @@ const TypewriterLoop = () => {
   useEffect(() => {
     let timer;
     const fullText = TEXT_TO_TYPE;
-    const currentIndex = loopNum % 1; // Hanya ada 1 teks, jadi selalu 0
+    const currentIndex = loopNum % 1; 
 
     // --- LOGIKA UTAMA ANIMASI ---
     const handleType = () => {
-      // Teks yang sedang diketik/dihapus
+      
       const currentText = fullText.substring(0, displayText.length + (isDeleting ? -1 : 1));
 
       setDisplayText(currentText);
@@ -54,7 +54,7 @@ const TypewriterLoop = () => {
         <span className="cursor" style={{ borderRight: '0.1em solid black', animation: 'blink 1s step-end infinite' }}>&nbsp;</span>
       </h1>
       
-      {/* Tambahkan style untuk animasi cursor */}
+      {/* animasi cursor */}
       <style jsx global>{`
         @keyframes blink {
           from, to { border-color: transparent }

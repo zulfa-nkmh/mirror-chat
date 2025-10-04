@@ -13,7 +13,7 @@ export default function AboutPage() {
             Arunika MC
           </span>
         </h1>
-        <p className="text-gray-400 mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed sm:leading-relaxed md:leading-relaxed">
+        <p className="text-gray-400 mt-2 sm:mt-4 text-base sm:text-lg md:text-xl lg:text-1xl leading-relaxed sm:leading-relaxed md:leading-relaxed">
           ARUNIKA MC (MirrorChat) is your AI twin that helps you reflect, grow, and face your truth
           with powerful digital conversations.
           <br /> Arunika MC isn’t just a chat – it’s a mirror for your career journey.

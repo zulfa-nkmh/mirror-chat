@@ -11,7 +11,7 @@ export async function POST(req) {
     console.log("[DEBUG BACKEND] profile:", profile);
     console.log("[DEBUG BACKEND] message:", message);
 
-    // Ganti model di sini ke model yang valid — misalnya “gemini-2.5-flash”
+    
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const result = await model.generateContent({
@@ -25,7 +25,7 @@ export async function POST(req) {
           ],
         },
       ],
-      // opsional: kamu bisa tambahkan generationConfig, systemInstruction, dsb
+      
     });
 
     const response = await result.response;
